@@ -97,7 +97,6 @@ Orthogonal Frequency Division Multiplexing (OFDM) is a modulation technique that
 ### Extract Dominant Frequency:
 
 * Similar to FSK, extract the dominant frequency from each segment of the signal.
-Calculate Expected Subcarrier Frequencies:
 
 ### Calculate the expected subcarrier frequencies based on the number of subcarriers and the subcarrier spacing.
 * For example, with 4 subcarriers and a subcarrier spacing of 50 Hz, the expected frequencies might be 0, 50, 100, 150, and 200 Hz.
