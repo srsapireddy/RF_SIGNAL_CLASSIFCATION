@@ -77,5 +77,34 @@ OFDM signals consist of multiple subcarriers that are spaced apart by a specific
 * FSK Signature Check: Compares the dominant frequency to f0 and f1 within a tolerance of 10 Hz.
 * OFDM Signature Check: Compares the dominant frequency to the expected subcarrier frequencies within a tolerance of 10 Hz.
 
+# FSK Signature Check
+Frequency Shift Keying (FSK) is a modulation technique where the frequency of the carrier signal is shifted between two predefined frequencies, 𝑓0 and 𝑓1, based on the binary data being transmitted. For instance, a binary '0' might be represented by 𝑓0 and a binary '1' by f1.
+
+## Step-by-Step Explanation
+### Extract Dominant Frequency
+* For each segment of the signal, extract the dominant frequency using methods such as the Short-Time Fourier Transform (STFT).
+### Compare Dominant Frequency
+* Compare the extracted dominant frequency to the predefined frequencies 𝑓0 and 𝑓1.
+Check if the dominant frequency is close to 𝑓0 or 𝑓1 within a tolerance range (e.g., ±10 Hz).
+### Tolerance
+The tolerance accounts for minor deviations and noise in the signal. For instance, if 
+𝑓0 =100 Hz and 𝑓1 =200 Hz, we consider frequencies within 90-110 Hz and 190-210 Hz as matches for 𝑓0 and 𝑓1.
+
+# OFDM Signature Check
+Orthogonal Frequency Division Multiplexing (OFDM) is a modulation technique that uses multiple subcarriers spaced apart by a specific frequency interval. Each subcarrier transmits a part of the data, and they are orthogonal to each other to avoid interference.
+
+## Step-by-Step Explanation
+### Extract Dominant Frequency:
+
+Similar to FSK, extract the dominant frequency from each segment of the signal.
+Calculate Expected Subcarrier Frequencies:
+
+### Calculate the expected subcarrier frequencies based on the number of subcarriers and the subcarrier spacing.
+For example, with 4 subcarriers and a subcarrier spacing of 50 Hz, the expected frequencies might be 0, 50, 100, 150, and 200 Hz.
+Compare Dominant Frequency:
+
+### Compare the extracted dominant frequency to each of the expected subcarrier frequencies.
+Check if the dominant frequency is close to any of the expected subcarrier frequencies within a tolerance range (e.g., ±10 Hz).
+
 # Summary
 The classification relies on identifying the key frequency components of the signal and matching them to the expected patterns of FSK and OFDM modulations. By extracting spectral features and analyzing the dominant frequencies, the system can distinguish between these two types of modulations effectively.
