@@ -41,7 +41,7 @@ This project aims to classify Frequency Shift Keying (FSK) and Orthogonal Freque
 python2 main.py
 ```
 
-## Outout
+## Output
 ![image](https://github.com/user-attachments/assets/fa63fd64-de94-4fce-a8f5-e6119c25222a)
 
 # Basis of Signal Classification
