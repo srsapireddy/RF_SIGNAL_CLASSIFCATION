@@ -23,7 +23,8 @@ This project aims to classify Frequency Shift Keying (FSK) and Orthogonal Freque
 * Generates multiple FSK signals with different parameters.
 * Extracts features from the generated signals.
 * Saves the extracted features to stft_features_fsk.csv.
-* ofdm_signal.py
+
+## ofdm_signal.py
 * Generates multiple OFDM signals with different parameters.
 * Extracts features from the generated signals.
 * Saves the extracted features to stft_features_ofdm.csv.
