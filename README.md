@@ -87,7 +87,7 @@ Frequency Shift Keying (FSK) is a modulation technique where the frequency of th
 * Compare the extracted dominant frequency to the predefined frequencies 𝑓0 and 𝑓1.
 Check if the dominant frequency is close to 𝑓0 or 𝑓1 within a tolerance range (e.g., ±10 Hz).
 ### Tolerance
-The tolerance accounts for minor deviations and noise in the signal. For instance, if 
+* The tolerance accounts for minor deviations and noise in the signal. For instance, if 
 𝑓0 =100 Hz and 𝑓1 =200 Hz, we consider frequencies within 90-110 Hz and 190-210 Hz as matches for 𝑓0 and 𝑓1.
 
 # OFDM Signature Check
@@ -96,15 +96,15 @@ Orthogonal Frequency Division Multiplexing (OFDM) is a modulation technique that
 ## Step-by-Step Explanation
 ### Extract Dominant Frequency:
 
-Similar to FSK, extract the dominant frequency from each segment of the signal.
+* Similar to FSK, extract the dominant frequency from each segment of the signal.
 Calculate Expected Subcarrier Frequencies:
 
 ### Calculate the expected subcarrier frequencies based on the number of subcarriers and the subcarrier spacing.
-For example, with 4 subcarriers and a subcarrier spacing of 50 Hz, the expected frequencies might be 0, 50, 100, 150, and 200 Hz.
+* For example, with 4 subcarriers and a subcarrier spacing of 50 Hz, the expected frequencies might be 0, 50, 100, 150, and 200 Hz.
 Compare Dominant Frequency:
 
 ### Compare the extracted dominant frequency to each of the expected subcarrier frequencies.
-Check if the dominant frequency is close to any of the expected subcarrier frequencies within a tolerance range (e.g., ±10 Hz).
+* Check if the dominant frequency is close to any of the expected subcarrier frequencies within a tolerance range (e.g., ±10 Hz).
 
 # Summary
 The classification relies on identifying the key frequency components of the signal and matching them to the expected patterns of FSK and OFDM modulations. By extracting spectral features and analyzing the dominant frequencies, the system can distinguish between these two types of modulations effectively.
