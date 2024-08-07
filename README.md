@@ -44,3 +44,38 @@ python2 main.py
 ## Outout
 ![image](https://github.com/user-attachments/assets/fa63fd64-de94-4fce-a8f5-e6119c25222a)
 
+# Basis of Signal Classification
+The signals in this project are classified based on features extracted from their Short-Time Fourier Transform (STFT). The following features are used to classify the signals:
+
+1. Spectral Centroid: This represents the "center of mass" of the spectrum. It indicates where the bulk of the signal's energy is located in the frequency spectrum.
+
+2. Spectral Bandwidth: This measures the width of the spectrum. It shows the range of frequencies that contain a significant portion of the signal's energy.
+
+3. Spectral Flatness: This quantifies how flat the spectrum is. A high spectral flatness value indicates that the power spectrum is similar across all frequencies (noise-like signal), while a low value indicates that the power is concentrated in a narrow band of frequencies (tonal signal).
+
+4. Dominant Frequency: This is the frequency with the highest amplitude in the spectrum. It represents the most prominent frequency component of the signal.
+
+# Classification Process
+The classification process involves comparing the extracted features of the signals to predefined parameters characteristic of FSK and OFDM signals.
+
+## FSK (Frequency Shift Keying)
+FSK signals switch between two distinct frequencies (f0 and f1) based on the binary data being transmitted. The classification checks if the dominant frequencies in the signal match either f0 or f1.
+
+## OFDM (Orthogonal Frequency Division Multiplexing)
+OFDM signals consist of multiple subcarriers that are spaced apart by a specific frequency interval (subcarrier_spacing). The classification checks if the dominant frequencies in the signal match the expected frequencies of the subcarriers.
+
+# Detailed Classification Steps
+## FSK Classification:
+* For each segment of the signal, extract the dominant frequency.
+* Check if the dominant frequency matches either f0 or f1 for the given FSK parameters.
+
+## OFDM Classification:
+* For each segment of the signal, extract the dominant frequency.
+* Check if the dominant frequency matches any of the expected subcarrier frequencies, which are multiples of the subcarrier_spacing for the given OFDM parameters.
+
+# Example of Classification Logic
+* FSK Signature Check: Compares the dominant frequency to f0 and f1 within a tolerance of 10 Hz.
+* OFDM Signature Check: Compares the dominant frequency to the expected subcarrier frequencies within a tolerance of 10 Hz.
+
+# Summary
+The classification relies on identifying the key frequency components of the signal and matching them to the expected patterns of FSK and OFDM modulations. By extracting spectral features and analyzing the dominant frequencies, the system can distinguish between these two types of modulations effectively.
